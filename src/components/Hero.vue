@@ -6,8 +6,12 @@
       <div class="hero-left-desc">Currently pursuing MS in Computer Science at ASU</div>
       <div class="yellow-bar"></div>
       <div class="profile-links">
-        <a href="https://www.facebook.com/sughoshrj/" target="_blank">
-          <img src="./../assets/icons/facebook.svg" />
+        <a href="https://github.com/rjsughosh" target="_blank">
+          <img src="./../assets/icons/github-logo.svg" />
+        </a>
+
+        <a href="https://www.linkedin.com/in/rjsughosh/" target="_blank">
+          <img src="./../assets/icons/linkedin.svg" />
         </a>
         <a href="mailto:rjsughosh@gmail.com" target="_blank">
           <img src="./../assets/icons/gmail.svg" />
@@ -15,11 +19,8 @@
         <a href="https://twitter.com/rj_sughosh" target="_blank">
           <img src="./../assets/icons/twitter.svg" />
         </a>
-        <a href="https://www.linkedin.com/in/rjsughosh/" target="_blank">
-          <img src="./../assets/icons/linkedin.svg" />
-        </a>
-        <a href="https://github.com/rjsughosh" target="_blank">
-          <img src="./../assets/icons/github-logo.svg" />
+        <a href="https://www.facebook.com/sughoshrj/" target="_blank">
+          <img src="./../assets/icons/facebook.svg" />
         </a>
       </div>
     </div>
@@ -76,6 +77,7 @@ export default {};
       margin: 1rem 0;
 
       display: flex;
+      // flex-direction: row-reverse;
       align-items: center;
       a {
         margin-right: 1.5rem;

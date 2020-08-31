@@ -10,7 +10,7 @@
 
       <div class="contact-button">
         <button class="primary-button">
-          <a href="mailto:rjsughosh@gmail.com">Start a conversation</a>
+          <a href="https://www.linkedin.com/in/rjsughosh/">Start a conversation</a>
         </button>
       </div>
     </div>

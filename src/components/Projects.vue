@@ -158,7 +158,7 @@ export default {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 3rem 15rem 3rem 15rem;
+    padding: 3rem 10rem 3rem 10rem;
   }
   .each-project {
     width: 300px;

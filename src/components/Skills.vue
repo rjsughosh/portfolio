@@ -104,6 +104,9 @@ export default {
   color: #000;
 
   .skills-badge-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     // display: flex;
     padding: 3rem 15rem 3rem 15rem;
     // justify-content: space-evenly;
