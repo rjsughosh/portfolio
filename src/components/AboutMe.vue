@@ -7,9 +7,9 @@
     <div class="photos-cover">
       <div class="about-me-text">
         I'm a full stack developer currently pursuing MS in CS at ASU. I have worked as a software engineer at Moonraft innovation Labs for 2 years.
-        I love travelling and I've explored almost all parts of India. I moved to arizona last year and I have already visited almost every place in arizona.
-        My hobbies are cooking and soccer. I love to cook and I'm getting pretty good at it. I also love to play soccer.
-        I used to go play regularly before COVID hit the world. I love to watch soccer as well, my favorite team is FC Barcelona.
+        I love travelling and I've explored almost all parts of India. I moved to Arizona last year and I have already visited almost every place here in Arizona.
+        My hobbies are cooking and soccer. I love to cook and I'm getting pretty good at it. you can check out my cooking page on instagram @az.adugemane. I also love to play soccer.
+        I used to play regularly before COVID hit the world. I love to watch soccer as well, my favorite team is FC Barcelona.
       </div>
     </div>
   </section>

@@ -136,13 +136,62 @@ export default {
 }
 .gold {
   background: #ffd700;
+  // type2
+  background: linear-gradient(to left, #d4af37 0%, #ffd700 100%);
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, #d4af37),
+    color-stop(100%, #ffd700)
+  );
+  background: -webkit-linear-gradient(to right, #d4af37 0%, #ffd700 100%);
+  background: -moz-linear-gradient(to right, #d4af37 0%, #ffd700 100%);
+  background: -o-linear-gradient(to right, #d4af37 0%, #ffd700 100%);
+  background: -ms-linear-gradient(to right, #d4af37 0%, #ffd700 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D4AF37', endColorstr='#ffd700', GradientType=0);
+  box-shadow: inset 0 1px 0 #ffd700;
+  -webkit-box-shadow: inset 0 1px 0 #ffd700;
+  -moz-box-shadow: inset 0 1px 0 #ffd700;
 }
 
 .silver {
   background: #bfbfbf;
+  background: linear-gradient(to left, #bfbfbf 0%, #999 100%);
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, #bfbfbf),
+    color-stop(100%, #999)
+  );
+  background: -webkit-linear-gradient(to right, #bfbfbf 0%, #999 100%);
+  background: -moz-linear-gradient(to right, #bfbfbf 0%, #999 100%);
+  background: -o-linear-gradient(to right, #bfbfbf 0%, #999 100%);
+  background: -ms-linear-gradient(to right, #bfbfbf 0%, #999 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bfbfbf', endColorstr='#999', GradientType=0);
+  box-shadow: inset 0 1px 0 #999;
+  -webkit-box-shadow: inset 0 1px 0 #999;
+  -moz-box-shadow: inset 0 1px 0 #999;
 }
 .bronze {
   background: #c27c34;
+  background: linear-gradient(to left, #c27c34 0%, #7f4600 100%);
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, #c27c34),
+    color-stop(100%, #7f4600)
+  );
+  background: -webkit-linear-gradient(to right, #c27c34 0%, #7f4600 100%);
+  background: -moz-linear-gradient(to right, #c27c34 0%, #7f4600 100%);
+  background: -o-linear-gradient(to right, #c27c34 0%, #7f4600 100%);
+  background: -ms-linear-gradient(to right, #c27c34 0%, #7f4600 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c27c34', endColorstr='#7F4600', GradientType=0);
+  box-shadow: inset 0 1px 0 #7f4600;
+  -webkit-box-shadow: inset 0 1px 0 #7f4600;
+  -moz-box-shadow: inset 0 1px 0 #7f4600;
 }
 .border-bottom {
   div {
