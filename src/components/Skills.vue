@@ -3,7 +3,12 @@
     <h2>My Skills</h2>
     <h3>Current stats. I hope to keep improving this list</h3>
     <div class="skills-badge-wrap">
-      <div class="skills-badge" :class="item.class" v-for="item in badges" :key="item.name">
+      <div
+        class="skills-badge skills-badge-glow"
+        :class="item.class"
+        v-for="item in badges"
+        :key="item.name"
+      >
         <img :title="item.name" :src="getImgUrl(item.icon)" v-bind:alt="item.icon" />
         <div>{{item.name}}</div>
       </div>
@@ -112,6 +117,8 @@ export default {
     // justify-content: space-evenly;
     // flex-wrap: wrap;
     .skills-badge {
+      position: relative;
+
       border-radius: 5px;
       display: inline-flex;
       justify-content: center;
@@ -128,8 +135,9 @@ export default {
   }
 }
 .gold {
-  background: #fee566;
+  background: #ffd700;
 }
+
 .silver {
   background: #bfbfbf;
 }
@@ -142,6 +150,67 @@ export default {
   }
   margin: 0 40%;
 }
+
+// shiny starts here
+@mixin center($extend: true) {
+  @if $extend {
+    @extend %center;
+  } @else {
+    position: absolute;
+  }
+}
+
+%center {
+  @include center($extend: false);
+}
+
+.skills-badge-glow {
+  @include center;
+  transition: 0.6s;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    width: 60px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.5;
+    filter: blur(30px);
+    transform: translateX(-100px) skewX(-15deg);
+  }
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    width: 30px;
+    height: 100%;
+    left: 30px;
+    top: 0;
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100px) skewX(-15deg);
+  }
+  &:hover {
+    // background: #338033;
+    // cursor: pointer;
+    &:before {
+      transform: translateX(300px) skewX(-15deg);
+      opacity: 0.6;
+      transition: 0.7s;
+    }
+    &:after {
+      transform: translateX(300px) skewX(-15deg);
+      opacity: 1;
+      transition: 0.7s;
+    }
+  }
+}
+// shiny ends here
 
 @media only screen and (max-width: 1025px) {
   .skills-cover {
