@@ -6,7 +6,7 @@
 
     <div class="contact-content">
       <h2>Let's Talk?</h2>
-      <h3>Have a project you need help with, need inspiration, or just wanna talk? I’m always open</h3>
+      <h3>Have a project you need help with, need inspiration, or just wanna talk? I’m always open.</h3>
 
       <div class="contact-button">
         <button class="primary-button">

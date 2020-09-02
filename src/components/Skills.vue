@@ -137,22 +137,22 @@ export default {
 .gold {
   background: #ffd700;
   // type2
-  background: linear-gradient(to left, #d4af37 0%, #ffd700 100%);
+  background: linear-gradient(to left, #ffd700 0%, #d4af37 100%);
   background: -webkit-gradient(
     linear,
     left top,
     left bottom,
     color-stop(0%, #d4af37),
-    color-stop(100%, #ffd700)
+    color-stop(100%, #d4af37)
   );
-  background: -webkit-linear-gradient(to right, #d4af37 0%, #ffd700 100%);
-  background: -moz-linear-gradient(to right, #d4af37 0%, #ffd700 100%);
-  background: -o-linear-gradient(to right, #d4af37 0%, #ffd700 100%);
-  background: -ms-linear-gradient(to right, #d4af37 0%, #ffd700 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D4AF37', endColorstr='#ffd700', GradientType=0);
-  box-shadow: inset 0 1px 0 #ffd700;
-  -webkit-box-shadow: inset 0 1px 0 #ffd700;
-  -moz-box-shadow: inset 0 1px 0 #ffd700;
+  background: -webkit-linear-gradient(to right, #d4af37 0%, #d4af37 100%);
+  background: -moz-linear-gradient(to right, #d4af37 0%, #d4af37 100%);
+  background: -o-linear-gradient(to right, #d4af37 0%, #d4af37 100%);
+  background: -ms-linear-gradient(to right, #d4af37 0%, #d4af37 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d4af37', endColorstr='#d4af37', GradientType=0);
+  box-shadow: inset 0 1px 0 #d4af37;
+  -webkit-box-shadow: inset 0 1px 0 #d4af37;
+  -moz-box-shadow: inset 0 1px 0 #d4af37;
 }
 
 .silver {

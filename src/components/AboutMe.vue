@@ -6,10 +6,28 @@
     <h2>About Me</h2>
     <div class="photos-cover">
       <div class="about-me-text">
-        I'm a full stack developer currently pursuing MS in CS at ASU. I have worked as a software engineer at Moonraft innovation Labs for 2 years.
-        I love travelling and I've explored almost all parts of India. I moved to Arizona last year and I have already visited almost every place here in Arizona.
-        My hobbies are cooking and soccer. I love to cook and I'm getting pretty good at it. you can check out my cooking page on instagram @az.adugemane. I also love to play soccer.
-        I used to play regularly before COVID hit the world. I love to watch soccer as well, my favorite team is FC Barcelona.
+        <p>
+          I'm a full stack developer working part-time at EdPlus at ASU and I'm
+          currently pursuing MS in CS at ASU. Prior to this, I worked as a
+          software engineer at Moonraft innovation Labs,Bengaluru for 2 years. I
+          am a graduate of RNS Institute of technology, Bengaluru, where I
+          majored in Computer Science Degree. I currently live in Tempe, Az.
+          When I’m not keeping busy with coding, I enjoy travelling and cooking.
+          Moving around a lot inspired me to travel and explore the world around
+          me. I love meeting new people and learning about the places they come
+          from. I believe traveling is the best way to make new friends. I've
+          travelled to almost all parts of India. I moved to Arizona last year
+          and I hope to continue to keep vising new places. My other hobbies are
+          cooking and soccer. I love to cook and I'm getting pretty good at it.
+          Along with my friends I recently started an
+          <a class="a-tag" href="https://www.instagram.com/az.adugemane/"
+            >Instagram</a
+          >
+          account to share some photos of the food we cook. I also love to play
+          soccer and video games. I used to play soccer regularly before COVID
+          hit the world. I love to watch soccer as well, my favorite team is FC
+          Barcelona.
+        </p>
       </div>
     </div>
   </section>
@@ -48,6 +66,12 @@ export default {};
   background: rgba(0, 0, 0, 0.7);
   height: 100%;
   line-height: 1.5;
+  text-align: justify;
+
+  .a-tag {
+    // text-decoration: none;
+    color: inherit;
+  }
 }
 
 @media only screen and (max-width: 1025px) {

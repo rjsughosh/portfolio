@@ -5,17 +5,21 @@
     </div>
     <h2>My Work</h2>
     <h3>Here are a few projects I've worked on recently. Want to see more? Email me.</h3>
+
     <div class="projects-wrap">
       <div
-        v-on:click="openLink(project.link)"
-        v-bind:class="{ clickable: project.link }"
-        class="each-project flip-card"
+        v-on:click="flip(project.id)"
+        class="container"
         v-for="project in projects"
         :key="project.id"
       >
-        <div class="flip-card-inner">
-          <div class="project-front flip-card-front">
-            <div class="project-top"></div>
+        <div v-bind:class="{flipped: project.status}" class="card">
+          <div
+            @mouseenter="project.hover = true"
+            @mouseleave="project.hover = false"
+            v-bind:class="{transparentFront: project.status}"
+            class="front clickable"
+          >
             <div class="project-bottom">
               <div class="project-title">
                 <div class="project-icon">
@@ -23,12 +27,18 @@
                 </div>
                 <div class="Project-tile-text">{{project.name}}</div>
               </div>
-              <!-- <div class="project-tags" v-for="tag in project.tags" :key="tag">{{tag}}</div> -->
-              <div class="project-tags">{{project.tag}}</div>
+              <!-- <div class="project-tags">{{project.tag}}</div> -->
+              <div v-if="project.hover" class="project-tags">
+                <span>See more</span>
+                <img src="./../assets/icons/arrow.svg" />
+              </div>
             </div>
           </div>
-          <div class="project-back flip-card-back">
+          <div class="back">
             <p>{{project.description}}</p>
+            <div v-if="project.link" class="icons clickable">
+              <img @click="openLink(project.link)" src="./../assets/icons/github-logo.svg" />
+            </div>
           </div>
         </div>
       </div>
@@ -41,6 +51,7 @@
 export default {
   data() {
     return {
+      isActive: false,
       projects: [
         {
           id: 1,
@@ -50,6 +61,8 @@ export default {
           description: `Implemented a real-time application that takes continuous image input from a webcam and instantly detects the facial emotion of the person 
                         and overlays a suitable emoji on the person’s face. Trained a convolutional Neural Networks using custom data set of 50 people, CK+ and JAFFE.`,
           link: "https://github.com/rjsughosh/RealtimeFacialEmotionRecognition",
+          status: false,
+          hover: false,
           tags: ["python", "caffe", "opencv"]
         },
         {
@@ -61,6 +74,8 @@ export default {
                         that lets developers quickly create serverless applications with a click of a button. Its modular design makes it easy to add new integrations 
                         that your enterprise needs.`,
           link: "https://github.com/rjsughosh/jazz",
+          status: false,
+          hover: false,
           tags: ["Angular", "AWS", "Serverless", "Node.js"]
         },
         {
@@ -71,6 +86,8 @@ export default {
           description: `Developed a twitter followers network visualization graph by leveraging twitter API using tweepy in Python and performed analysis on the 
                         graph such as Degree distribution, Clustering Coefficient, Pagerank and diameter.`,
           link: "",
+          status: false,
+          hover: false,
           tags: ["Python", "Tweepy"]
         },
         {
@@ -82,6 +99,8 @@ export default {
                         Extracted statistical features like Standard deviation, Area under curve, Velocity, Fast Fourier Transform (FFT), Polynomial Fit. Achieved 
                         an accuracy of 74%.`,
           link: "",
+          status: false,
+          hover: false,
           tags: ["python", "sklearn"]
         },
         {
@@ -93,6 +112,8 @@ export default {
                         completely unrelated. Extracted features by using Universal sentence encoder and used multiple classifiers including SVM, Decision 
                         trees and Naïve Bayes with an average of 82% accuracy`,
           link: "",
+          status: false,
+          hover: false,
           tags: ["python", "sklearn"]
         },
         {
@@ -102,6 +123,8 @@ export default {
           tag: "Angular",
           description: `A simple web app in Angular for adding stocks tracker and visualizing live data`,
           link: "https://github.com/rjsughosh/stocks-app",
+          status: false,
+          hover: false,
           tags: ["Angular"]
         },
         {
@@ -112,6 +135,8 @@ export default {
           description:
             " A simple web application in VueJS to create and visualize a starting 11 for your football team",
           link: "https://github.com/rjsughosh/dream-11",
+          status: false,
+          hover: false,
           tags: ["VueJS"]
         },
         {
@@ -122,6 +147,8 @@ export default {
           description:
             "Built a game similar to Nokia classic ‘Bounce’. C++; OpenGL.",
           link: "",
+          status: false,
+          hover: false,
           tags: ["C++"]
         }
       ]
@@ -135,6 +162,24 @@ export default {
       if (link) {
         window.open(link);
       }
+    },
+    flipToBack(id) {
+      let el = this.$refs[id];
+      console.log(el[0].classList);
+      // console.log(el);
+      el[0].classList.add("flipped");
+    },
+    flip(id) {
+      for (let i in this.projects) {
+        if (this.projects[i].id == id) {
+          console.log("name", this.projects[i].name);
+          this.projects[i].status = !this.projects[i].status;
+        }
+      }
+      // let el = this.projects.filter(x => x.id == id);
+      // el.status = !el.status;
+      // console.log(this.isActive);
+      // this.isActive = !this.isActive;
     }
   }
 };
@@ -160,104 +205,44 @@ export default {
     flex-wrap: wrap;
     padding: 3rem 10rem 3rem 10rem;
   }
-  .each-project {
-    width: 300px;
-    height: 300px;
-    color: #fff;
-    border-radius: 5px;
-    padding: 1rem;
-    margin: 1rem;
-  }
-  .project-front {
-    // padding: 1rem;
-    border-radius: 5px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .project-back {
-    // padding: 1rem;
-    border-radius: 5px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    p {
-      margin: 1.5rem;
-      line-height: 1.4;
-    }
-  }
-  .project-top {
-    height: 150px;
-  }
   .project-bottom {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    position: relative;
   }
   .project-title {
     font-size: 1.5rem;
+    margin: 1rem;
     display: flex;
     text-align: left;
+    align-items: center;
     img {
       margin-right: 1rem;
-      margin-left: 2rem;
       height: 2.5rem;
     }
   }
   .project-tags {
-    //   display: inline-flex;
+    // visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
     text-align: center;
     margin-bottom: 1rem;
+    img {
+      height: 1.2rem;
+      margin: 0 0.5rem;
+    }
   }
 }
+
 .clickable {
   cursor: pointer;
-}
-.flip-card {
-  // background-color: transparent;
-  // width: 300px;
-  // height: 300px;
-  perspective: 1000px;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.flip-card-front {
-  background: #2d2b2b;
-
-  // color: black;
-}
-
-.flip-card-back {
-  // background-color: #2980b9;
-  background: #2d2b2b;
-
-  // color: white;
-  transform: rotateY(180deg);
 }
 
 @media only screen and (max-width: 1025px) {
@@ -277,5 +262,96 @@ export default {
       padding: 3rem 0rem 3rem 0rem;
     }
   }
+}
+
+// ---------------
+.container {
+  position: relative;
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 800px;
+  width: 300px;
+  height: 300px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem;
+}
+.card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transition: -webkit-transform 0.7s;
+  -moz-transition: -moz-transform 0.7s;
+  -o-transition: -o-transform 0.7s;
+  transition: transform 0.7s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+}
+.card .front,
+.card .back {
+  display: block;
+  height: 100%;
+  width: 100%;
+  color: white;
+  text-align: center;
+  position: absolute;
+  backface-visibility: hidden;
+}
+.card .front {
+  border-radius: 5px;
+  background: #2d2b2b;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  backface-visibility: hidden;
+  opacity: 1;
+  transition: 0.7s opacity;
+}
+.card .back {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  // color: #2d2b2b;
+  // border: 1px solid #2d2b2b;
+  // background: #fff;
+  background: #2d2b2b;
+  backface-visibility: hidden;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  p {
+    margin: 1.5rem;
+    line-height: 1.4;
+  }
+  img {
+    height: 2rem;
+    // border-radius: 50%;
+    // border: 1px solid #fff;
+  }
+}
+.card.flipped {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.card .transparentFront {
+  opacity: 0;
+  transition: 0.7s all;
+}
+.visible {
+  visibility: visible;
 }
 </style>
