@@ -27,7 +27,7 @@
 
     <div class="hero-right">
       <div class="hero-right-portrait">
-        <img src="../assets/portrait.png" />
+        <img src="../assets/portrait.webp" />
       </div>
     </div>
   </section>

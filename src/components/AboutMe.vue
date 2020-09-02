@@ -20,9 +20,11 @@
           and I hope to continue to keep vising new places. My other hobbies are
           cooking and soccer. I love to cook and I'm getting pretty good at it.
           Along with my friends I recently started an
-          <a class="a-tag" href="https://www.instagram.com/az.adugemane/"
-            >Instagram</a
-          >
+          <a
+            class="a-tag"
+            target="_blank"
+            href="https://www.instagram.com/az.adugemane/"
+          >Instagram</a>
           account to share some photos of the food we cook. I also love to play
           soccer and video games. I used to play soccer regularly before COVID
           hit the world. I love to watch soccer as well, my favorite team is FC
