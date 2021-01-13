@@ -54,6 +54,28 @@ export default {
       isActive: false,
       projects: [
         {
+          id: 10,
+          name: "Pandemic Visualization",
+          icon: "react.svg",
+          tag: "React",
+          description: `Developed a Pandemic Visualization for the IEEE Data visualization Mini Challenge. Built 8 different connected graphs in React using D3.js which can answer and analyze the Mini challenge questions.`,
+          link: "https://github.com/rjsughosh/pandemic-viz",
+          status: false,
+          hover: false,
+          tags: ["react", "d3"]
+        },
+        {
+          id: 9,
+          name: "Covid symptoms app",
+          icon: "java.svg",
+          tag: "android",
+          description: `Built a COVID symptoms android application which can log various symptoms and calculate the heart rate and breathing rate using the phone’s rear camera and accelerometer.`,
+          link: "",
+          status: false,
+          hover: false,
+          tags: ["android", "java", "kotlin"]
+        },
+        {
           id: 1,
           name: "Real-time facial emotion recognition",
           icon: "python.svg",
