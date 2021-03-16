@@ -22,6 +22,7 @@
         <a href="https://www.facebook.com/sughoshrj/" target="_blank">
           <img src="./../assets/icons/facebook.svg" />
         </a>
+        <a href="google.com" target="_blank">Resume</a>
       </div>
     </div>
 
