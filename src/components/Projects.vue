@@ -54,6 +54,17 @@ export default {
       isActive: false,
       projects: [
         {
+          id: 11,
+          name: "Online Texas Hold'em Poker",
+          icon: "react.svg",
+          tag: "React",
+          description: `Coming Soon. An online texas hold'em poker game which can be played with your friends. Built in React and socket.io`,
+          link: "https://github.com/rjsughosh/poker",
+          status: false,
+          hover: false,
+          tags: ["react", "d3"]
+        },
+        {
           id: 10,
           name: "Pandemic Visualization",
           icon: "react.svg",
