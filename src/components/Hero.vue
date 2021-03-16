@@ -22,6 +22,7 @@
         <a href="https://www.facebook.com/sughoshrj/" target="_blank">
           <img src="./../assets/icons/facebook.svg" />
         </a>
+        <a class="resume" href="https://github.com/rjsughosh/portfolio/blob/master/src/assets/documents/Resume%20-%20Sughosh%20Jahagirdar.pdf" target="_blank">Resume</a>
       </div>
     </div>
 
@@ -86,6 +87,12 @@ export default {};
         img {
           height: 1.5rem;
         }
+      }
+      .resume{
+        color: #fff;
+    text-decoration: none;
+    padding: 12px;
+    font-size: 18px;
       }
     }
   }
